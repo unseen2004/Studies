@@ -1,0 +1,22 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"dir-cur-bld" : "/home/maks/Programming/Studies/Sem3/MonteCarlo/cmake-build-debug",
+	"dir-cur-src" : "/home/maks/Programming/Studies/Sem3/MonteCarlo",
+	"dir-top-bld" : "/home/maks/Programming/Studies/Sem3/MonteCarlo/cmake-build-debug",
+	"dir-top-src" : "/home/maks/Programming/Studies/Sem3/MonteCarlo",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"/usr/include/python3.12",
+		"/usr/lib/python3.12/site-packages/numpy/_core/include"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "/home/maks/Programming/Studies/Sem3/MonteCarlo/cmake-build-debug/CMakeFiles/MonteCarlo.dir"
+}
