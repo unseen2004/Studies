@@ -1,0 +1,106 @@
+przypadek Użycia 1: Użytkownik Biblioteki - Wyświetl Książki
+Opis: Użytkownik biblioteki (czytelnik) wyświetla listę dostępnych książek w bibliotece.
+
+Warunki wstępne:
+Użytkownik jest zarejestrowany lub przegląda książki bez logowania.
+Biblioteka posiada książki w katalogu.
+Przebieg zdarzeń:
+Użytkownik wybiera opcję "Wyświetl Książki".
+System pobiera listę dostępnych książek z katalogu.
+System wyświetla listę książek z następującymi danymi: tytuł, autor, liczba dostępnych egzemplarzy.
+Użytkownik może wybrać książkę, aby zobaczyć szczegóły lub przejść do innych działań (np. wypożyczenie książki).
+Warunki końcowe:
+Użytkownik widzi listę dostępnych książek.
+Brak zmian w systemie.
+
+
+Przypadek Użycia 2: Użytkownik Biblioteki - Wypożycz Książkę
+Opis: Użytkownik może wypożyczyć książkę z biblioteki.
+
+Warunki wstępne:
+Użytkownik musi być zarejestrowany.
+Książka musi być dostępna do wypożyczenia (czyli musi być dostępny co najmniej jeden egzemplarz).
+Przebieg zdarzeń:
+Użytkownik wybiera opcję "Wypożycz Książkę".
+System prosi użytkownika o wybór książki z dostępnej listy.
+Użytkownik wybiera książkę i składa wniosek o jej wypożyczenie.
+System sprawdza, czy książka jest dostępna do wypożyczenia.
+Jeśli tak, system przetwarza wypożyczenie, aktualizuje status książki (oznacza ją jako wypożyczoną) i przypisuje książkę do użytkownika.
+System potwierdza wypożyczenie i aktualizuje dostępność książek w katalogu.
+Warunki końcowe:
+Książka jest przypisana do użytkownika.
+Status książki zostaje zaktualizowany na "wypożyczona" i jest usunięta z listy dostępnych książek.
+
+
+Przypadek Użycia 3: Użytkownik Biblioteki - Wyświetl Wypożyczone Książki
+Opis: Użytkownik może zobaczyć listę książek, które aktualnie wypożyczył.
+
+Warunki wstępne:
+Użytkownik musi być zarejestrowany i musi mieć wypożyczone książki.
+Przebieg zdarzeń:
+Użytkownik wybiera opcję "Wyświetl Wypożyczone Książki".
+System pobiera listę książek wypożyczonych przez użytkownika.
+System wyświetla listę wypożyczonych książek z następującymi danymi: tytuł książki, data zwrotu.
+Użytkownik może wybrać książki do zwrócenia lub zobaczyć szczegóły.
+Warunki końcowe:
+Użytkownik widzi listę wypożyczonych książek.
+Brak zmian w systemie.
+
+
+Przypadek Użycia 4: Bibliotekarz - Zarejestruj Czytelnika
+Opis: Bibliotekarz rejestruje nowego użytkownika (czytelnika) w systemie.
+
+Warunki wstępne:
+Bibliotekarz jest zalogowany do systemu.
+Użytkownik nie jest jeszcze zarejestrowany.
+Przebieg zdarzeń:
+Bibliotekarz wybiera opcję "Zarejestruj Czytelnika".
+System prosi o wprowadzenie danych użytkownika, takich jak imię, nazwisko, adres, numer telefonu itp.
+Bibliotekarz wprowadza dane i zatwierdza formularz.
+System tworzy nowy wpis w bazie danych dla czytelnika i przypisuje unikalny identyfikator.
+System potwierdza rejestrację użytkownika.
+Warunki końcowe:
+Użytkownik zostaje zarejestrowany w systemie.
+Nowy czytelnik może teraz wypożyczać książki.
+
+
+Przypadek Użycia 5: Bibliotekarz - Dodaj Tytuł Książki
+Opis: Bibliotekarz dodaje nowy tytuł książki do katalogu.
+
+Warunki wstępne:
+Bibliotekarz jest zalogowany do systemu.
+Przebieg zdarzeń:
+Bibliotekarz wybiera opcję "Dodaj Tytuł Książki".
+System prosi o wprowadzenie szczegółów książki: tytuł, autor, gatunek, wydawca itp.
+Bibliotekarz wprowadza dane książki.
+System zapisuje tytuł książki w katalogu.
+Warunki końcowe:
+Książka zostaje dodana do katalogu systemu.
+Można teraz dodać egzemplarze tej książki.
+
+
+Przypadek Użycia 6: Bibliotekarz - Dodaj Egzemplarz Książki
+Opis: Bibliotekarz dodaje egzemplarz książki do katalogu.
+
+Warunki wstępne:
+Książka musi istnieć w katalogu.
+Przebieg zdarzeń:
+Bibliotekarz wybiera opcję "Dodaj Egzemplarz Książki".
+System prosi o wybór książki z katalogu.
+Bibliotekarz wybiera książkę i podaje dane egzemplarza (np. numer identyfikacyjny).
+System dodaje egzemplarz książki do katalogu.
+Warunki końcowe:
+Egzemplarz książki jest teraz dostępny w katalogu.
+Książka jest gotowa do wypożyczenia.
+
+
+Przypadek Użycia 7: Bibliotekarz - Wyświetl Wszystkich Czytelników
+Opis: Bibliotekarz może zobaczyć listę wszystkich zarejestrowanych czytelników.
+
+Warunki wstępne:
+Bibliotekarz jest zalogowany do systemu.
+Przebieg zdarzeń:
+Bibliotekarz wybiera opcję "Wyświetl Wszystkich Czytelników".
+System wyświetla listę wszystkich zarejestrowanych użytkowników.
+Warunki końcowe:
+Bibliotekarz widzi listę wszystkich zarejestrowanych czytelników.
