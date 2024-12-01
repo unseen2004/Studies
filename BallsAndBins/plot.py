@@ -1,12 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 # Function to read the results from the file
 def read_results(filename):
     data = np.loadtxt(filename)
     return data.reshape((-1, 50, 5))
-
 
 # Function to plot the results
 def plot_results(results):
@@ -68,56 +66,6 @@ def plot_results(results):
     plt.tight_layout()
     plt.savefig("results_plots.pdf")
     plt.show()
-
-    # Additional plots
-    fig, axs = plt.subplots(2, 3, figsize=(15, 10))
-
-    # Plot b(n)/n and b(n)/sqrt(n) as functions of n
-    axs[0, 0].plot(n_values, avg_birthday_paradox / n_values, label="b(n)/n")
-    axs[0, 0].plot(n_values, avg_birthday_paradox / np.sqrt(n_values), label="b(n)/sqrt(n)")
-    axs[0, 0].set_title("Ratios of Bn")
-    axs[0, 0].set_xlabel("n")
-    axs[0, 0].set_ylabel("Ratio")
-    axs[0, 0].legend()
-
-    # Plot u(n)/n as a function of n
-    axs[0, 1].plot(n_values, avg_n_empty_bins / n_values, label="u(n)/n")
-    axs[0, 1].set_title("Ratio of Un")
-    axs[0, 1].set_xlabel("n")
-    axs[0, 1].set_ylabel("Ratio")
-    axs[0, 1].legend()
-
-    # Plot c(n)/n, c(n)/(n ln n), and c(n)/n^2 as functions of n
-    axs[0, 2].plot(n_values, avg_coupon_collector_problem / n_values, label="c(n)/n")
-    axs[0, 2].plot(n_values, avg_coupon_collector_problem / (n_values * np.log(n_values)), label="c(n)/(n ln n)")
-    axs[0, 2].plot(n_values, avg_coupon_collector_problem / (n_values**2), label="c(n)/n^2")
-    axs[0, 2].set_title("Ratios of Cn")
-    axs[0, 2].set_xlabel("n")
-    axs[0, 2].set_ylabel("Ratio")
-    axs[0, 2].legend()
-
-    # Plot d(n)/n, d(n)/(n ln n), and d(n)/n^2 as functions of n
-    axs[1, 0].plot(n_values, avg_m_two_balls / n_values, label="d(n)/n")
-    axs[1, 0].plot(n_values, avg_m_two_balls / (n_values * np.log(n_values)), label="d(n)/(n ln n)")
-    axs[1, 0].plot(n_values, avg_m_two_balls / (n_values**2), label="d(n)/n^2")
-    axs[1, 0].set_title("Ratios of Dn")
-    axs[1, 0].set_xlabel("n")
-    axs[1, 0].set_ylabel("Ratio")
-    axs[1, 0].legend()
-
-    # Plot (d(n) - c(n))/n, (d(n) - c(n))/(n ln n), and (d(n) - c(n))/(n ln ln n) as functions of n
-    axs[1, 1].plot(n_values, (avg_m_two_balls - avg_coupon_collector_problem) / n_values, label="(d(n) - c(n))/n")
-    axs[1, 1].plot(n_values, (avg_m_two_balls - avg_coupon_collector_problem) / (n_values * np.log(n_values)), label="(d(n) - c(n))/(n ln n)")
-    axs[1, 1].plot(n_values, (avg_m_two_balls - avg_coupon_collector_problem) / (n_values * np.log(np.log(n_values))), label="(d(n) - c(n))/(n ln ln n)")
-    axs[1, 1].set_title("Ratios of Dn - Cn")
-    axs[1, 1].set_xlabel("n")
-    axs[1, 1].set_ylabel("Ratio")
-    axs[1, 1].legend()
-
-    plt.tight_layout()
-    plt.savefig("additional_results_plots.pdf")
-    plt.show()
-
 
 # Main execution
 results = read_results("results.txt")
