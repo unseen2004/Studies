@@ -10,6 +10,8 @@ add_executable(BallsAndBins main.cpp
         experiment.cpp
         experiment.h
         file_operations.cpp
-        file_operations.h)
+        file_operations.h
+        experiment2.cpp
+        experiment2.h)
 
 target_link_libraries(BallsAndBins ${Python3_LIBRARIES})
