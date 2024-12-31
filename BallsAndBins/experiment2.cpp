@@ -6,13 +6,15 @@
 
 
 data::data(int n, const std::vector<int> &comp, const std::vector<int> &shift)
-    : n(n), n_comp(comp), n_shift(shift) {}
+    : n(n), n_comp(comp), n_shift(shift) {
+}
 
 data2::data2(int n, const std::vector<int> &rounds)
-    : n(n), min_rounds(rounds) {}
+    : n(n), min_rounds(rounds) {
+}
 
-std::vector<std::vector<int>> maximum_load_balanced_allocation(int d) {
-    std::vector<std::vector<int>> results;
+std::vector<std::vector<int> > maximum_load_balanced_allocation(int d) {
+    std::vector<std::vector<int> > results;
 
     for (int n = 10000; n <= 1000000; n += 10000) {
         std::vector<int> experiments;
@@ -33,9 +35,9 @@ std::vector<std::vector<int>> maximum_load_balanced_allocation(int d) {
 
                 // Find the chosen bin with the smallest current load
                 auto it = std::min_element(chosenBins.begin(), chosenBins.end(),
-                    [&](int a, int b) {
-                        return bins[a] < bins[b];
-                    }
+                                           [&](int a, int b) {
+                                               return bins[a] < bins[b];
+                                           }
                 );
 
                 // Increment that bin
@@ -50,7 +52,6 @@ std::vector<std::vector<int>> maximum_load_balanced_allocation(int d) {
     }
     return results;
 }
-
 
 
 std::vector<int> generate_random_permutation(int n) {
@@ -117,6 +118,7 @@ std::vector<data2> communication_with_interference(double p) {
 
     for (int n{1000}; n <= 100000; n += 1000) {
         std::vector<int> min_rounds{};
+        std::cout << n << "\n";
         // experiment
         for (int k{}; k < 50; ++k) {
             std::vector<bool> stations(n, false);
@@ -126,10 +128,10 @@ std::vector<data2> communication_with_interference(double p) {
                 // round
                 ++rounds;
                 for (int i{}; i < n; ++i) {
-                    if (Random::get(0.0, 1.0) < p) {
-                        if (!stations[i]) {
-                            stations[i] = true;
-                            ++n_received;
+                    if (!stations[i]) {
+                        if (Random::get(0.0, 1.0) < p) {
+                                stations[i] = true;
+                                ++n_received;
                         }
                     }
                 }
