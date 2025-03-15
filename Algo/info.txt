@@ -1,0 +1,4 @@
+
+sudo openconnect --protocol=gp -u makkul9669 vpn.student.pwr.edu.pl
+
+Gramtylko12!
