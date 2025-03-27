@@ -37,7 +37,7 @@
     box-sizing: inherit;
   }
 
-  /* h/t Scott O'Hara https://css-tricks.com/inclusively-hidden/ */
+  /*  https://css-tricks.com/inclusively-hidden/ */
   .sr-only:not(:focus):not(:active) {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -47,7 +47,6 @@
     white-space: nowrap;
     width: 1px;
   }
-
   body {
     font-family: var(--main);
     line-height: 1.5;
@@ -175,14 +174,14 @@
 @layer intro {
   .intro {
     padding: 4rem 0 10rem 0;
-    /* jagged white/transparent graphic */
     background-image: url("../img/fem-featured-top.png"),
-      /* comet image */
+
       url("../img/fem-comet.jpg");
     background-repeat: repeat-x, no-repeat;
     background-position: bottom center, 86% 10%;
     color: var(--white);
   }
+  /*
     .clean-bg {
       background-image: none;
       background-color: var(--black);
@@ -193,14 +192,15 @@
       background-image: none;
       background-color: var(--white);
     }
+  */
 .profile-image {
     float: right;
-    width: 200px; /* Small size */
+    width: 200px;
     margin-left: 2rem;
     margin-bottom: 2rem;
     /* Increased negative margin to move image up to heading level */
     margin-top: -6rem;
-    position: relative; /* Add positioning context */
+    position: relative;
 }
 
 .profile-image img {
@@ -209,10 +209,10 @@
     object-fit: cover;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
     .profile-image {
-        width: 150px; /* Even smaller on smaller screens */
+        width: 150px;
     }
 }
 
@@ -222,7 +222,7 @@
         margin: 2rem auto;
         display: block;
         width: 120px;
-        margin-top: 0; /* Reset negative margin on small screens */
+        margin-top: 0;
     }
 }
   .intro a {
@@ -240,10 +240,6 @@
 
 @layer header {
 
-  /* originally placed so that we could see what we were doing when creating the navbar */
-  /* body {
-    background-color: black;
-  } */
   header {
     display: flex;
     flex-flow: row wrap;
@@ -698,8 +694,7 @@
   header+article {
     max-width: 500px;
   }
-/* Clean background styles for me.html */
-.clean-bg ~ .project {
+  .clean-bg ~ .project {
   background-image: none;
   background-color: var(--white);
 }
@@ -708,16 +703,15 @@
   background-image: none;
 }
 
-/* Clean footer when following clean sections */
 .clean-bg ~ .project + footer {
   background: var(--black);
 }
+
   .youtube {
     aspect-ratio: 16 / 9;
     width: 100%;
     margin-bottom: 3rem;
   }
-  /* turn off previous figure/figcaption formatting */
   .project figure {
     display: block;
   }
